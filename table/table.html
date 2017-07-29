@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table {
+            height: 300px;
+            border-collapse: collapse;
+        }
+
+        caption {
+            font-size: 1.5em;
+        }
+
+        th,
+        td {
+            text-align: center;
+            width: 12.5%;
+            padding: 20px;
+        }
+
+        th {
+            background: gray;
+            border: 6px solid #bbb;
+        }
+
+        th:first-child {
+            background: black;
+            color: white;
+        }
+
+        td {
+            border: 3px solid #bbb;
+        }
+
+        td:first-child {
+            background: pink;
+            border: 6px solid #bbb;
+        }
+
+        .lesson {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .lesson-sunday {
+            background-image: url("/xiaowanzi.jpg");
+            background-size: 80% 100%;
+        }
+
+        .lesson-tuesday {
+            background-image: url("/pikachu.png");
+            background-size: 80% 100%;
+        }
+
+        .lesson-friday {
+            background-image: url("/duorameng.png");
+            background-size: 80% 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <caption>直播14班课程表</caption>
+        <thead>
+            <tr>
+                <th>Date Time</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+                <th>Sunday</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>9:20 AM</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="lesson lesson-sunday"></td>
+            </tr>
+            <tr>
+                <td>8:20 PM</td>
+                <td></td>
+                <td class="lesson lesson-tuesday"></td>
+                <td></td>
+                <td></td>
+                <td class="lesson lesson-friday"></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+
+    </table>
+</body>
+
+</html>
