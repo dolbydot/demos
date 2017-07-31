@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /*  未完-待补充  */
+
+        /*  *通配符选择器  */
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        /*  element元素选择器  */
+        h2 {
+            background: red;
+        }
+
+        /*  class类选择器  */
+        .one {
+            font-size: 2em;
+        }
+
+        /*  id选择器  */
+        #two {
+            color: green;
+        }
+
+        /*  组合选择器a,b-选中所有a和b  */
+        ul,
+        ol {
+            line-height: 30px;
+        }
+
+        /*  组合选择器a b-选中所有a的后代b  */
+        li a {
+            text-decoration: none;
+        }
+
+        /*  组合选择器a > b-选中b的直接子元素a  */
+        .three>li {
+            list-style: none;
+        }
+
+        /*  组合选择器a + b-选中同时匹配a和b的b的下一相邻兄弟元素  */
+        .three #two+li {
+            font-style: italic;
+        }
+
+        /*  组合选择器a ~ b-选中所有同时匹配a和b的下n个相邻兄弟元素  */
+        .three #two~li {
+            background: yellow;
+        }
+
+        /*  多个选择器混搭组合使用  */
+        .three #two~li,
+        li a,
+        input {
+            font-size: 3rem;
+        }
+
+        /*  属性选择器[attr]-选择包含attr属性的所有元素，不论attr的值为何。  */
+        [for] {
+            background: pink;
+        }
+
+        /*  属性选择器[attr=val]-选择attr属性被赋值为val的所有元素。  */
+        [for="title1"] {
+            border: 2px solid gray;
+        }
+
+        /*  属性选择器[attr~=val]-选择attr属性的值（以空格间隔出多个值）中有包含val值的所有元素，比如位于被空格分隔的多个类（class）中的一个类。  */
+        [class~="four"] {
+            border: 10px solid black;
+        }
+
+        /*  属性选择器[attr*=val]-选择attr属性的值中包含字符串val的元素。  */
+        [class*="ix"] {
+            text-align: center;
+        }
+
+        /*  属性选择器[attr^=val]-选择attr属性的值以val开头（包括val）的元素。  */
+        [class^="f"] {
+            color: red;
+        }
+
+        /*  属性选择器[attr$=val]-选择attr属性的值以val结尾（包括val）的元素。  */
+        [class^="cc"] {
+            text-decoration: underline;
+        }
+
+        /*  伪类选择器  */
+        a:link {color: #FF0000;}
+        a:visited {color: #00FF00;}
+        a:hover {color: #FF00FF;}
+        a:active {color: #0000FF;}
+
+        /*  伪类与其他选择器结合使用  */
+        a.url:link {
+            color: yellowgreen;
+        }
+
+        /*  伪类：／:first-child/:last-child/:nth-child  */
+        .eight li:first-child {
+            text-align: right;
+        }
+        .eight li:last-child {
+            text-align: center;
+        }
+        .eight li:nth-child(3) {
+            font-size: 60px;
+        }
+
+        /*  伪类：／:first-letter  */
+        h2:first-letter {
+            font-size: 30px;
+        }
+
+        /*  伪类：／::before/::after  */
+        h2::before {
+            content: "before";
+            border: 20px solid #abc;
+            border-radius: 50%;
+        }
+        h2::after {
+            content: "after";
+            border: 20px solid #abc;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h2>hello world!</h2>
+        <p class="one">2<span>3</span></p>
+        <ul class="three">
+            <li id="two">item1
+                <ul>
+                    <li>item11</li>
+                    <li>item22</li>
+                    <li>item33</li>
+                    <li>item44</li>
+                </ul>
+            </li>
+            <li>item2</li>
+            <li>item3</li>
+            <li>item4</li>
+        </ul>
+        <ol class="eight">
+            <li><a href="">item5</a></li>
+            <li>item6</li>
+            <li>item7</li>
+            <li>item8</li>
+        </ol>
+        <form action="">
+            <fieldset class="five six seven">
+                <legend for="title1">信息</legend>
+                <label>姓名：</label>
+                <input type="text" disabled>
+            </fieldset>
+            <fieldset class="four five six">
+                <legend for="title2">资料</legend>
+                <label>爱好：</label>
+                <input type="checkbox" name="fav">吃饭
+                <input type="checkbox" name="fav" checked>睡觉
+                <input type="checkbox" name="fav">打豆豆
+            </fieldset>
+        </form>
+
+        <p class="aaa">段落1</p>
+        <p class="bbb">段落2</p>
+        <p class="ccc">段落3</p>
+        <p><a href="https://github.com/dolbydot?tab=repositories">我的github</a></p>
+        <p><a class="url" href="https://www.google.ca">Google</a></p>
+
+    </div>
+</body>
+
+</html>
