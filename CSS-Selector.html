@@ -94,7 +94,7 @@
         }
 
         /*  伪类选择器  */
-        a:link {color: #FF0000;}
+        a:link {color: #FF0000;}
         a:visited {color: #00FF00;}
         a:hover {color: #FF00FF;}
         a:active {color: #0000FF;}
@@ -104,7 +104,7 @@
             color: yellowgreen;
         }
 
-        /*  伪类：／:first-child/:last-child/:nth-child  */
+        /*  伪类：／E:first-child/E:last-child/E:nth-child  匹配父元素的第一个／最后一个／第N个子元素E  */
         .eight li:first-child {
             text-align: right;
         }
@@ -114,13 +114,18 @@
         .eight li:nth-child(3) {
             font-size: 60px;
         }
+        
+        /*  伪元素：／E::first-line  匹配E元素内容的第一行  */
+        h2:first-line {
+            font-size: 10px;
+        }
 
-        /*  伪类：／:first-letter  */
+        /*  伪元素：／E::first-letter  匹配E元素内容的第一个字符  */
         h2:first-letter {
             font-size: 30px;
         }
-
-        /*  伪类：／::before/::after  */
+        
+        /*  伪元素：／E::before/E::after  在E元素之前／之后插入内容，必须要有content属性  */
         h2::before {
             content: "before";
             border: 20px solid #abc;
@@ -161,7 +166,7 @@
             <fieldset class="five six seven">
                 <legend for="title1">信息</legend>
                 <label>姓名：</label>
-                <input type="text" disabled>
+                <input type="text" disabled>
             </fieldset>
             <fieldset class="four five six">
                 <legend for="title2">资料</legend>
