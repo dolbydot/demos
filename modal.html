@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Modal</title>
+    <style>
+        #modal .ct {
+            background: #bbb;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            display: none;
+        }
+
+        #modal .btn {
+            border: none;
+            outline: none;
+            background: #aaa;
+            color: white;
+        }
+
+        #modal .show {
+            position: absolute;
+            z-index: 999;
+        }
+
+        #modal .ct .close {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .showCt {
+            display: block !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="modal">
+        <button class="btn show">展示</button>
+        <div class="ct">
+            <button class="btn close">关闭</button>
+        </div>
+    </div>
+
+    <script>
+        var btnShow = document.querySelector('.show'),
+            btnClose = document.querySelector('.close'),
+            ct = document.querySelector('#modal .ct');
+
+        btnShow.addEventListener('click', function () {
+            ct.classList.add('showCt');
+        });
+
+        btnClose.addEventListener('click', function () {
+            ct.classList.remove('showCt');
+        });
+    </script>
+</body>
+
+</html>
