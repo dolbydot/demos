@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        .ct {
+            box-sizing: border-box;
+            line-height: 100px;
+            font-size: 40px;
+            padding: 10px;
+            box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, .2)
+        }
+
+        .ct.active {
+            background: aqua;
+            color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ct">hello dot</div>
+    <button class="add">add</button>
+    <button class="remove">remove</button>
+    <button class="toggle1">toggle1</button>
+    <button class="toggle2">toggle2</button>
+
+    <script>
+        var content = document.querySelector('.ct'),
+            addBtn = document.querySelector('.add'),
+            removeBtn = document.querySelector('.remove'),
+            toggle1Btn = document.querySelector('.toggle1'),
+            toggle2Btn = document.querySelector('.toggle2');
+
+        addBtn.onclick = function () {
+            content.classList.add('active')
+        }
+
+        removeBtn.onclick = function () {
+            content.classList.remove('active')
+        }
+
+        toggle1Btn.onclick = function () {
+            content.classList.toggle('active')
+        }
+
+        toggle2Btn.onclick = function () {
+            if (content.classList.contains('active')) {
+                content.classList.remove('active')
+            } else {
+                content.classList.add('active')
+            }
+        }
+    </script>
+</body>
+
+</html>
