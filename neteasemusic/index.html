@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+
+    </style>
+</head>
+
+<body>
+    <header></header>
+    <main>
+        <div class="cate"></div>
+    </main>
+
+    <script>
+        var xhr = new XMLHttpRequest()
+        xhr.open('GET', '/neteasemusic/data.json', true)
+        xhr.send()
+        xhr.onload = function () {
+            console.log(JSON.parse(xhr.responseText))
+        }
+
+        function render(cateData) {
+            for (var i = 0; i < cateData.length; i++) {
+                var node = document.createElement('div')
+                node.classList.add('item')
+                node.innerText = cateData[i]
+                document.querySelector('.cate').appendChild(node)
+            }
+        }
+    </script>
+</body>
+
+</html>
