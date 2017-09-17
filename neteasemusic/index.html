@@ -23,6 +23,7 @@
         xhr.open('GET', 'https://raw.githubusercontent.com/dolbydot/demos/master/neteasemusic/data.json', true)
         xhr.send()
         xhr.onload = function () {
+            render(JSON.parse(xhr.responseText))
             console.log(JSON.parse(xhr.responseText))
         }
 
